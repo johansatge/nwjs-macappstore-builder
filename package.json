@@ -28,12 +28,13 @@
     "url": "http://johansatge.com"
   },
   "files": [
-    "builder.js",
-    "cli.js"
+    "src/builder.js",
+    "src/steps",
+    "src/cli.js"
   ],
-  "main": "builder.js",
+  "main": "src/builder.js",
   "bin": {
-    "nwjs-macappstore-builder": "cli.js"
+    "nwjs-macappstore-builder": "src/cli.js"
   },
   "repository": {
     "type": "git",
