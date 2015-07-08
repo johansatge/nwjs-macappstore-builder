@@ -3,6 +3,7 @@
 var async = require('async');
 var colors = require('colors');
 var validator = require('validator.js');
+var path = require('path');
 
 var Files = require('./steps/files.js');
 var Icon = require('./steps/icon.js');
@@ -11,6 +12,8 @@ var Signature = require('./steps/signature.js');
 
 var m = function()
 {
+
+    var cwd = process.cwd().replace(/\/$/, '');
 
     var _checkConfiguration = function(config)
     {
@@ -43,6 +46,11 @@ var m = function()
         return wrong_fields;
     };
 
+    this.setCWD = function(dir)
+    {
+        cwd = dir.replace(/\/$/, '');
+    };
+
     this.build = function(config, callback, log_output)
     {
         var wrong_fields = _checkConfiguration.apply(this, [config]);
@@ -54,17 +62,20 @@ var m = function()
             }
             return;
         }
-        var app_path = config.build_path.replace(/\/$/, '') + '/' + config.name + '.app';
+        var build_path = path.isAbsolute(config.build_path) ? config.build_path : cwd + '/' + config.build_path.replace(/\/$/, '');
+        var app_path = build_path + '/' + config.name + '.app';
         var steps = [
             function(next)
             {
                 log_output ? console.log('Installing base app...') : null;
-                Files.installBaseApp(config.nwjs_path, app_path, next);
+                var nwjs_path = path.isAbsolute(config.nwjs_path) ? config.nwjs_path : cwd + '/' + config.nwjs_path;
+                Files.installBaseApp(nwjs_path, app_path, next);
             },
             function(next)
             {
                 log_output ? console.log('Copying app...') : null;
-                Files.copyApp(config.source_path, app_path, next);
+                var source_path = path.isAbsolute(config.source_path) ? config.source_path : cwd + '/' + config.source_path;
+                Files.copyApp(source_path, app_path, next);
             },
             function(next)
             {
@@ -84,7 +95,8 @@ var m = function()
             function(next)
             {
                 log_output ? console.log('Copying icon...') : null;
-                Icon.installIcon(app_path, config.icon_path, next);
+                var icon_path = path.isAbsolute(config.icon_path) ? config.icon_path : cwd + '/' + config.icon_path;
+                Icon.installIcon(app_path, icon_path, next);
             },
             function(next)
             {

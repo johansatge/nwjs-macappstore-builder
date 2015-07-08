@@ -6,6 +6,7 @@ var colors = require('colors');
 var Builder = require('./builder.js');
 var argv = require('yargs').argv;
 var fs = require('fs');
+var path = require('path');
 var manifest = JSON.parse(fs.readFileSync(__dirname.replace(/\/$/, '') + '/../package.json', {encoding: 'utf8'}));
 
 // Prints version
@@ -28,9 +29,11 @@ if (argv.help)
 }
 
 // Main process
+var builder = new Builder();
 try
 {
     var config = argv.config !== 'undefined' ? JSON.parse(fs.readFileSync(argv.config, {encoding: 'utf8'})) : {};
+    builder.setCWD(path.dirname(argv.config));
 }
 catch (error)
 {
@@ -53,7 +56,6 @@ for (var param in argv)
     }
 }
 
-var builder = new Builder();
 builder.build(config, function(error, app_path)
 {
     console.log(error ? colors.red(error.message) : colors.green('Built successfully. (' + app_path + ')'));
