@@ -74,6 +74,7 @@ Just require the module and fire the `build` function.
 var Builder = require('nwjs-macappstore-builder');
 var show_output = true;
 
+var builder = new Builder();
 builder.build(config, function(error, app_path)
 {
     console.log(error ? error.message : 'Build done: ' + app_path);
