@@ -101,7 +101,7 @@ The `build-config.json` file being a JSON object containing all the parameters d
 
 | Version | Date | Notes |
 | --- | --- | --- |
-| `1.0.0` | July 08th, 2015 | Initial version |
+| `2.0.0` | July 08th, 2015 | Initial version |
 
 ## License
 
