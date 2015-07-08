@@ -17,9 +17,17 @@ var config = {
     copyright: '© Sample copyright',
     app_category: 'public.app-category.utilities',
     app_sec_category: 'public.app-category.productivity',
+    identity: 'LK7U6U8DZ4',
+    entitlements: [
+        'com.apple.security.network.client',
+        'com.apple.security.assets.movies.read-only'
+    ],
     plist: {
         NSSampleProperty1: 'Property value 1',
-        NSSampleProperty2: 'Property value 1'
+        NSSampleProperty2: {
+            NSSub1: 'Sub-property value 1',
+            NSSub2: 'Sub-property value 1'
+        }
     }
 };
 
