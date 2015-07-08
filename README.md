@@ -68,14 +68,7 @@ var show_output = true;
 
 builder.build(config, function(error, app_path)
 {
-    if (error)
-    {
-      console.log(error.message);
-    }
-    else
-    {
-      console.log('Build done - ' + app_path);
-    }
+    console.log(error ? error.message : 'Build done: ' + app_path);
 }, show_output);
 ```
 
