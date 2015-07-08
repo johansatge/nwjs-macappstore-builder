@@ -9,6 +9,7 @@ var Files = require('./steps/files.js');
 var Icon = require('./steps/icon.js');
 var Plist = require('./steps/plist.js');
 var Signature = require('./steps/signature.js');
+var Package = require('./steps/package.js');
 
 var m = function()
 {
@@ -112,6 +113,11 @@ var m = function()
             {
                 log_output ? console.log('Signing...') : null;
                 Signature.sign(app_path, config.bundle_id, config.identity, config.entitlements, next);
+            },
+            function(next)
+            {
+                log_output ? console.log('Packaging...') : null;
+                Package.buildPackage(app_path, config.identity, next);
             }
         ];
         async.series(steps, function(error)
