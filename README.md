@@ -21,7 +21,7 @@ It automates all the steps described in [Publishing NW.js apps on the Mac App St
 Install with [npm](https://www.npmjs.com/):
 
 ```bash
-npm install nwjs-macappstore-builder
+npm install -g nwjs-macappstore-builder
 ```
 
 ## Configuration
