@@ -28,17 +28,22 @@ if (argv.help)
     process.exit(0);
 }
 
+
 // Main process
+var config = {};
 var builder = new Builder();
-try
+if (typeof argv.config !== 'undefined')
 {
-    var config = argv.config !== 'undefined' ? JSON.parse(fs.readFileSync(argv.config, {encoding: 'utf8'})) : {};
-    builder.setCWD(path.dirname(argv.config));
-}
-catch (error)
-{
-    console.log(colors.red(error.message));
-    process.exit(1);
+    try
+    {
+        config = JSON.parse(fs.readFileSync(argv.config, {encoding: 'utf8'}));
+        builder.setCWD(path.dirname(argv.config));
+    }
+    catch (error)
+    {
+        console.log(colors.red(error.message));
+        process.exit(1);
+    }
 }
 for (var param in argv)
 {
