@@ -1,6 +1,6 @@
 {
   "name": "nwjs-macappstore-builder",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "afer alternative to `rm`",
   "keywords": [
     "cli-app",
@@ -36,10 +36,7 @@
   "bin": {
     "nwjs-macappstore-builder": "src/cli.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/johansatge/nwjs-macappstore-builder.git"
-  },
+  "repository": "johansatge/nwjs-macappstore-builder",
   "dependencies": {
     "async": "^1.3.0",
     "colors": "^1.1.2",
