@@ -1,0 +1,55 @@
+{
+  "name": "nwjs-macappstore-builder",
+  "version": "1.0.0",
+  "description": "afer alternative to `rm`",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
+    "shell",
+    "script",
+    "nw",
+    "nwjs",
+    "node-webkit",
+    "mas",
+    "appstore",
+    "macappstore",
+    "osx",
+    "mac"
+  ],
+  "homepage": "https://github.com/johansatge/nwjs-macappstore-builder",
+  "bugs": {
+    "url": "https://github.com/johansatge/nwjs-macappstore-builderissues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Johan Satgé",
+    "email": "contact@johansatge.fr",
+    "url": "http://johansatge.com"
+  },
+  "files": [
+    "builder.js",
+    "cli.js"
+  ],
+  "main": "builder.js",
+  "bin": {
+    "nwjs-macappstore-builder": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/documentcloud/underscore.git"
+  },
+  "dependencies": {
+    "async": "^1.3.0",
+    "colors": "^1.1.2",
+    "plist": "^1.1.0",
+    "validator.js": "^1.2.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "os": [
+    "darwin"
+  ]
+}
