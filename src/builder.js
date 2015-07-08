@@ -106,7 +106,7 @@ var m = function()
         {
             if (typeof callback === 'function')
             {
-                callback(error);
+                callback(error, app_path);
             }
         });
     };
