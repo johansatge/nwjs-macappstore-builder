@@ -85,13 +85,13 @@ builder.build(config, function(error, app_path)
 Each parameter of the config can be passed as a parameter:
 
 ```bash
-nwjs-macappstore-build --name=YourApp --bundle_id=com.yourcompanyname.yourapp [...]
+nwjs-macappstore-builder --name=YourApp --bundle_id=com.yourcompanyname.yourapp [...]
 ```
 
-As there are several parameters, you may prefer this more readable alternative:
+As there are a lot of parameters, you may prefer this more readable alternative:
 
 ```bash
-nwjs-macappstore-build --config=/Users/johan/Desktop/build-config.json
+nwjs-macappstore-builder --config=/Users/johan/Desktop/build-config.json
 ```
 
 The `build-config.json` file being a JSON object containing all the parameters described above.
