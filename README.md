@@ -1,5 +1,13 @@
 # NW.js Mac App Store Builder
 
+![Icon](icon.jpg)
+
+This node module has been made to easily build and publish [NW.js](http://nwjs.io) apps on the Mac App Store.
+
+It gathers all the steps described in [Publishing NW.js apps on the Mac App Store: a detailed guide](https://github.com/johansatge/nwjs-macappstore).
+
+---
+
 * [Installation](#installation)
 * [Configuration](#configuration)
 * [Programmatic usage](#programmatic-usage)
