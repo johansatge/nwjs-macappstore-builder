@@ -1,12 +1,16 @@
 'use strict';
 
 var exec = require('child_process').exec;
+var path = require('path');
 
 var m = {};
 
 m.installBaseApp = function(nwjs_path, app_path, callback)
 {
-    exec('rm -r "' + app_path + '"; cp -r "' + nwjs_path + '" "' + app_path + '"', function(error)
+    var rm_command = 'rm -r "' + app_path + '"';
+    var dir_command = 'mkdir -p "' + path.dirname(app_path) + '"';
+    var cp_command = 'cp -r "' + nwjs_path + '" "' + app_path + '"';
+    exec(rm_command + ';' + dir_command + ';' + cp_command, function(error, stdout, stderr)
     {
         callback(error);
     });
