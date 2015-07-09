@@ -48,4 +48,12 @@ m.copyApp = function(source_path, app_path, callback)
     });
 };
 
+m.fixPermissions = function(app_path, callback)
+{
+    exec('cd "' + app_path + '/Contents/Resources/app.nw" && find . -type f -exec chmod 664 {} \\;', function(error)
+    {
+        callback(error);
+    });
+};
+
 module.exports = m;
