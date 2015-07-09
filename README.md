@@ -45,7 +45,8 @@ var config = {
     icon_path: '/Users/johan/Github/my-nwjs-project/icon.icns',
     
     // Signing configuration
-    identity: 'LK12345678',
+    identity: 'LK12345678', // Application signing
+    identityInstaller: 'LK12345679', // Application Isntaller signing
     entitlements: [
       'com.apple.security.network.client',
       'com.apple.security.assets.movies.read-only'
