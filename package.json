@@ -1,6 +1,6 @@
 {
   "name": "nwjs-macappstore-builder",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "afer alternative to `rm`",
   "keywords": [
     "cli-app",
