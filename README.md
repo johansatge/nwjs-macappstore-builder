@@ -46,7 +46,7 @@ var config = {
     
     // Signing configuration
     identity: 'LK12345678', // Application signing
-    identity_installer: 'LK12345679', // Application Isntaller signing
+    identity_installer: 'LK12345679', // Application installer signing (may be the same as identity)
     entitlements: [
       'com.apple.security.network.client',
       'com.apple.security.assets.movies.read-only'
