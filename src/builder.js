@@ -117,7 +117,7 @@ var m = function()
             function(next)
             {
                 log_output ? console.log('Packaging...') : null;
-                Package.buildPackage(app_path, config.identityInstaller, next);
+                Package.buildPackage(app_path, config.identity_installer, next);
             }
         ];
         async.series(steps, function(error)
