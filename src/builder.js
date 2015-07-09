@@ -1,6 +1,7 @@
 'use strict';
 
 var async = require('async');
+var shell = require('shelljs');
 var colors = require('colors');
 var validator = require('validator.js');
 var path = require('path');
@@ -109,6 +110,12 @@ var m = function()
             {
                 log_output ? console.log('Configuring helpers...') : null;
                 Plist.configureHelpers(app_path, config.bundle_id, next);
+            },
+
+            function(next)
+            {
+                log_output ? console.log('Fixing permissions...') : null;
+                next(shell.exec('cd ' + app_path + '/Contents/Resources/app.nw && find . -type f -exec chmod 664 {} \\;').code != 0);
             },
             function(next)
             {
