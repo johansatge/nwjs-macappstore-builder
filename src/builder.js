@@ -32,6 +32,7 @@ var m = function()
             app_category: [new assert().Required(), new assert().NotBlank()],
             app_sec_category: [new assert().Required(), new assert().NotBlank()],
             identity: [new assert().Required(), new assert().NotBlank()],
+            identity_installer: [new assert().Required(), new assert().NotBlank()],
             entitlements: [new assert().Required(), new assert().NotNull()],
             plist: [new assert().NotNull()]
         });
