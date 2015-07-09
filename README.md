@@ -102,6 +102,7 @@ The `build-config.json` file being a JSON object containing all the parameters d
 
 | Version | Date | Notes |
 | --- | --- | --- |
+| `3.0.0` | July 09th, 2015 | Adds the `identity_installer` option<br>Adds `--force` when signing<br>Do not force bundle IDs when signing |
 | `2.1.2` | July 08th, 2015 | Updates repository URL |
 | `2.1.1` | July 08th, 2015 | NPM fix |
 | `2.1.0` | July 08th, 2015 | Adds packaging step |
