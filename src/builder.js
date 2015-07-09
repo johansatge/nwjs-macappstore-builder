@@ -112,7 +112,7 @@ var m = function()
             function(next)
             {
                 log_output ? console.log('Signing...') : null;
-                Signature.sign(app_path, config.bundle_id, config.identity, config.entitlements, next);
+                Signature.sign(app_path, config.identity, config.entitlements, next);
             },
             function(next)
             {

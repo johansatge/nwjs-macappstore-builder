@@ -9,7 +9,7 @@ var exec = require('child_process').exec;
 
 var m = {};
 
-m.sign = function(app_path, bundle_id, identity, entitlements, callback)
+m.sign = function(app_path, identity, entitlements, callback)
 {
     var uniqid = crypto.createHash('md5').update(app_path).digest('hex');
     var parent_path = os.tmpdir().replace(/\/$/, '') + '/nwjs_parent_' + uniqid + '.xml';
@@ -28,21 +28,21 @@ m.sign = function(app_path, bundle_id, identity, entitlements, callback)
         function(next)
         {
             var path = app_path + '/Contents/Frameworks/nwjs Helper.app';
-            exec(_getSigningCommand(identity, bundle_id + '.helper', child_path, path), next);
+            exec(_getSigningCommand(identity, child_path, path), next);
         },
         function(next)
         {
             var path = app_path + '/Contents/Frameworks/nwjs Helper EH.app';
-            exec(_getSigningCommand(identity, bundle_id + '.helper.EH', child_path, path), next);
+            exec(_getSigningCommand(identity, child_path, path), next);
         },
         function(next)
         {
             var path = app_path + '/Contents/Frameworks/nwjs Helper NP.app';
-            exec(_getSigningCommand(identity, bundle_id + '.helper.NP', child_path, path), next);
+            exec(_getSigningCommand(identity, child_path, path), next);
         },
         function(next)
         {
-            exec(_getSigningCommand(identity, bundle_id, parent_path, app_path), next);
+            exec(_getSigningCommand(identity, parent_path, app_path), next);
         }
     ];
     async.series(commands, function(error)
@@ -60,9 +60,9 @@ m.sign = function(app_path, bundle_id, identity, entitlements, callback)
     });
 };
 
-var _getSigningCommand = function(identity, bundle_id, entitlement_path, app_path)
+var _getSigningCommand = function(identity, entitlement_path, app_path)
 {
-    var command = 'codesign --force --deep -s ' + identity + ' -i ' + bundle_id + ' --entitlements "' + entitlement_path + '"';
+    var command = 'codesign --force --deep -s ' + identity + ' --entitlements "' + entitlement_path + '"';
     return command + ' "' + app_path + '"';
 };
 
