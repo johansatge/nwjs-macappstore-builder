@@ -62,7 +62,7 @@ m.sign = function(app_path, bundle_id, identity, entitlements, callback)
 
 var _getSigningCommand = function(identity, bundle_id, entitlement_path, app_path)
 {
-    var command = 'codesign --deep -s ' + identity + ' -i ' + bundle_id + ' --entitlements "' + entitlement_path + '"';
+    var command = 'codesign --force --deep -s ' + identity + ' -i ' + bundle_id + ' --entitlements "' + entitlement_path + '"';
     return command + ' "' + app_path + '"';
 };
 
