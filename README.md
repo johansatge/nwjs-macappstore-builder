@@ -64,6 +64,9 @@ var config = {
             NSSub2: 'Sub-property value 1'
         }
     }
+    
+    // Optimization
+    uglify_js: true // Uglifies all JS files found in the app (default is FALSE)
 }
 ```
 
@@ -102,8 +105,9 @@ The `build-config.json` file being a JSON object containing all the parameters d
 
 | Version | Date | Notes |
 | --- | --- | --- |
-| `3.0.2` | July 09th, 2015 | Do not `--force` signing as it makes the app crash on some cases
-| `3.0.1` | July 09th, 2015 | Adds the `Fixing permissions` step
+| `3.1.0` | July 20th, 2015 | Adds `uglify_js` option (will uglify all JS found in the app) |
+| `3.0.2` | July 09th, 2015 | Do not `--force` signing as it makes the app crash on some cases |
+| `3.0.1` | July 09th, 2015 | Adds the `Fixing permissions` step |
 | `3.0.0` | July 09th, 2015 | Adds the `identity_installer` option<br>Adds `--force` when signing<br>Do not force bundle IDs when signing |
 | `2.1.2` | July 08th, 2015 | Updates repository URL |
 | `2.1.1` | July 08th, 2015 | NPM fix |
@@ -121,3 +125,5 @@ This project is released under the [MIT License](LICENSE).
 * [plist](https://github.com/TooTallNate/plist.js)
 * [validator.js](validatorjs.org)
 * [yargs](https://github.com/bcoe/yargs)
+* [glob](https://github.com/isaacs/node-glob)
+* [uglify-js](https://github.com/mishoo/UglifyJS2)

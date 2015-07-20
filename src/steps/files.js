@@ -2,6 +2,9 @@
 
 var exec = require('child_process').exec;
 var path = require('path');
+var glob = require('glob');
+var uglifyjs = require('uglify-js');
+var fs = require('fs');
 
 var m = {};
 
@@ -52,6 +55,22 @@ m.fixPermissions = function(app_path, callback)
 {
     exec('cd "' + app_path + '/Contents/Resources/app.nw" && find . -type f -exec chmod 664 {} \\;', function(error)
     {
+        callback(error);
+    });
+};
+
+m.uglifyJavascript = function(app_path, callback)
+{
+    glob('**/*.js', {cwd: app_path + '/Contents/Resources/app.nw/'}, function(error, files)
+    {
+        for (var index = 0; index < files.length; index += 1)
+        {
+            if (files[index].search('.min.') === -1)
+            {
+                var minified = uglifyjs.minify(cwd + files[index]);
+                fs.writeFileSync(cwd + files[index], minified.code, {encoding: 'utf8'});
+            }
+        }
         callback(error);
     });
 };

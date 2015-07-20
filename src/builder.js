@@ -34,7 +34,8 @@ var m = function()
             identity: [new assert().Required(), new assert().NotBlank()],
             identity_installer: [new assert().Required(), new assert().NotBlank()],
             entitlements: [new assert().Required(), new assert().NotNull()],
-            plist: [new assert().NotNull()]
+            plist: [new assert().NotNull()],
+            uglify_js: [new assert().NotNull()]
         });
         var checked = constraint.check(config);
         var wrong_fields = [];
@@ -65,7 +66,7 @@ var m = function()
             return;
         }
         var build_path = path.isAbsolute(config.build_path) ? config.build_path : cwd + '/' + config.build_path.replace(/\/$/, '');
-        var app_path = build_path + '/' + config.name + '.app';
+        var app_path = path.resolve('/', build_path + '/' + config.name + '.app');
         var steps = [
             function(next)
             {
@@ -78,6 +79,18 @@ var m = function()
                 log_output ? console.log('Copying app...') : null;
                 var source_path = path.isAbsolute(config.source_path) ? config.source_path : cwd + '/' + config.source_path;
                 Files.copyApp(source_path, app_path, next);
+            },
+            function(next)
+            {
+                if (config.uglify_js)
+                {
+                    log_output ? console.log('Uglifying Javascript...') : null;
+                    Files.uglifyJavascript(app_path, next);
+                }
+                else
+                {
+                    next();
+                }
             },
             function(next)
             {
