@@ -5,6 +5,7 @@ var colors = require('colors');
 var validator = require('validator.js');
 var path = require('path');
 
+var Download = require('./steps/download.js');
 var Files = require('./steps/files.js');
 var Icon = require('./steps/icon.js');
 var Plist = require('./steps/plist.js');
@@ -74,11 +75,36 @@ var m = function()
         }
         var build_path = path.isAbsolute(config.build_path) ? config.build_path : cwd + '/' + config.build_path.replace(/\/$/, '');
         var app_path = path.resolve('/', build_path + '/' + config.name + '.app');
+        var nwjs_path = null;
         var steps = [
             function(next)
             {
+                if (config.nwjs_path.search(/^https?:/) === -1)
+                {
+                    log_output ? console.log('Using local base app.') : null;
+                    nwjs_path = path.isAbsolute(config.nwjs_path) ? config.nwjs_path : cwd + '/' + config.nwjs_path;
+                    next();
+                }
+                else
+                {
+                    log_output ? console.log('Using downloaded app.') : null;
+                    Download.onProgress(function(progress)
+                    {
+                        log_output ? process.stdout.write('Downloading... (' + progress + '%)' + '\r') : null;
+                    });
+                    Download.get(config.nwjs_path, function(error, cached_path)
+                    {
+                        if (!error)
+                        {
+                            nwjs_path = cached_path;
+                        }
+                        next(error);
+                    });
+                }
+            },
+            function(next)
+            {
                 log_output ? console.log('Installing base app...') : null;
-                var nwjs_path = path.isAbsolute(config.nwjs_path) ? config.nwjs_path : cwd + '/' + config.nwjs_path;
                 Files.installBaseApp(nwjs_path, app_path, next);
             },
             function(next)
@@ -154,7 +180,6 @@ var m = function()
             }
         });
     };
-
 };
 
 module.exports = m;

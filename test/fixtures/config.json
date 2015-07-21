@@ -1,5 +1,5 @@
 {
-    "nwjs_path": "/Applications/nwjs.app",
+    "nwjs_path": "http://dl.nwjs.io/v0.12.2/nwjs-v0.12.2-osx-x64.zip",
     "source_path": "test/fixtures/app.nw",
     "build_path": ".build",
     "icon_path": "test/fixtures/icon.icns",
