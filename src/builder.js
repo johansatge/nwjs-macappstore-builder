@@ -51,7 +51,14 @@ var m = function()
 
     this.setCWD = function(dir)
     {
-        cwd = dir.replace(/\/$/, '');
+        if (path.isAbsolute(dir))
+        {
+            cwd = dir.replace(/\/$/, '');
+        }
+        else
+        {
+            cwd += '/' + dir.replace(/\/$/, '');
+        }
     };
 
     this.build = function(config, callback, log_output)
