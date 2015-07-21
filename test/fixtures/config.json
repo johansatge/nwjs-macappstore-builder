@@ -1,8 +1,8 @@
 {
     "nwjs_path": "/Applications/nwjs.app",
-    "source_path": "app.nw",
+    "source_path": "test/fixtures/app.nw",
     "build_path": ".build",
-    "icon_path": "icon.icns",
+    "icon_path": "test/fixtures/icon.icns",
     "name": "Your App",
     "bundle_id": "com.yourcompany.yourapp",
     "version": "1.0.0",
