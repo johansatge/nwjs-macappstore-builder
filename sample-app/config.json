@@ -1,0 +1,24 @@
+{
+    "nwjs_path": "/Applications/nwjs.app",
+    "source_path": "app.nw",
+    "build_path": ".build",
+    "icon_path": "icon.icns",
+    "name": "Your App",
+    "bundle_id": "com.yourcompany.yourapp",
+    "version": "1.0.0",
+    "bundle_version": "100",
+    "copyright": "© Sample copyright",
+    "app_category": "public.app-category.utilities",
+    "app_sec_category": "public.app-category.productivity",
+    "identity": "LK7U6U8DZ4",
+    "identity_installer": "LK7U6U8DZ4",
+    "entitlements": ["com.apple.security.network.client", "com.apple.security.assets.movies.read-only"],
+    "plist": {
+        "NSSampleProperty1": "Property value 1",
+        "NSSampleProperty2": {
+            "NSSub1": "Sub-property value 1",
+            "NSSub2": "Sub-property value 1"
+        }
+    },
+    "uglify_js": true
+}
