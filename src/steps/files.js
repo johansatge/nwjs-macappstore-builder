@@ -61,7 +61,8 @@ m.fixPermissions = function(app_path, callback)
 
 m.uglifyJavascript = function(app_path, callback)
 {
-    glob('**/*.js', {cwd: app_path + '/Contents/Resources/app.nw/'}, function(error, files)
+    var cwd = app_path + '/Contents/Resources/app.nw/';
+    glob('**/*.js', {cwd: cwd}, function(error, files)
     {
         for (var index = 0; index < files.length; index += 1)
         {
