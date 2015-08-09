@@ -10,7 +10,7 @@ m.buildPackage = function(app_path, identity, callback)
     var dir = path.dirname(app_path);
     var app = path.basename(app_path);
     var pkg = app.replace('.app', '.pkg');
-    var command = 'cd "' + dir + '" && productbuild --component "' + app + '" /Applications --sign ' + identity + ' "' + pkg + '"';
+    var command = 'cd "' + dir + '" && productbuild --component "' + app + '" /Applications --sign "' + identity + '" "' + pkg + '"';
     exec(command, callback);
 };
 
