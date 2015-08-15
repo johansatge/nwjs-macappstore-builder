@@ -105,6 +105,7 @@ The `build-config.json` file being a JSON object containing all the parameters d
 
 | Version | Date | Notes |
 | --- | --- | --- |
+| `3.1.3` | August 15th, 2015 | Adds quotes around code-signing identity |
 | `3.1.2` | July 21th, 2015 | Fixes minify path |
 | `3.1.1` | July 21th, 2015 | Fixes relative config path |
 | `3.1.0` | July 20th, 2015 | Adds `uglify_js` option (will uglify all JS found in the app) |
