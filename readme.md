@@ -1,3 +1,8 @@
+![Version](https://img.shields.io/npm/v/nwjs-macappstore-builder.svg)
+![Downloads](https://img.shields.io/npm/dm/nwjs-macappstore-builder.svg)
+![Dependencies](https://img.shields.io/david/johansatge/nwjs-macappstore-builder.svg)
+![devDependencies](https://img.shields.io/david/dev/johansatge/nwjs-macappstore-builder.svg)
+
 # NW.js Mac App Store Builder
 
 ![Icon](icon.jpg)
