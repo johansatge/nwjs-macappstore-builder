@@ -1,6 +1,6 @@
 {
   "name": "nwjs-macappstore-builder",
-  "version": "3.1.3",
+  "version": "3.1.4",
   "description": "Easily build and publish NW.js apps on the Mac App Store.",
   "keywords": [
     "cli-app",
@@ -24,7 +24,6 @@
   "license": "MIT",
   "author": {
     "name": "Johan Satgé",
-    "email": "contact@johansatge.fr",
     "url": "http://johansatge.com"
   },
   "files": [
@@ -38,18 +37,18 @@
   },
   "repository": "johansatge/nwjs-macappstore-builder",
   "dependencies": {
-    "async": "^1.3.0",
+    "async": "^1.4.2",
     "colors": "^1.1.2",
     "glob": "^5.0.14",
     "plist": "^1.1.0",
     "replace": "^0.3.0",
-    "shelljs": "^0.5.1",
-    "uglify-js": "^2.4.23",
-    "validator.js": "^1.2.1",
-    "yargs": "^3.15.0"
+    "shelljs": "^0.5.3",
+    "uglify-js": "^2.4.24",
+    "validator.js": "^1.2.2",
+    "yargs": "^3.24.0"
   },
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^2.3.2"
   },
   "engines": {
     "node": ">=0.12.0"
