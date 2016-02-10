@@ -25,7 +25,7 @@ var m = function()
             build_path: [new assert().Required(), new assert().NotBlank()],
             icon_path: [new assert().Required(), new assert().NotBlank(), new assert().Regexp('\.icns$')],
             name: [new assert().Required(), new assert().NotBlank()],
-            bundle_id: [new assert().Required(), new assert().NotBlank(), new assert().Regexp('^[a-z0-9.]+$')],
+            bundle_id: [new assert().Required(), new assert().NotBlank(), new assert().Regexp('^[a-zA-Z0-9.]+$')],
             version: [new assert().Required(), new assert().NotBlank()],
             bundle_version: [new assert().Required(), new assert().NotBlank()],
             copyright: [new assert().Required(), new assert().NotBlank()],
