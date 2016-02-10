@@ -110,6 +110,7 @@ The `build-config.json` file being a JSON object containing all the parameters d
 
 | Version | Date | Notes |
 | --- | --- | --- |
+| `3.1.5` | February 10th, 2016 | Fixes validation issue when using uppercase letters in `bundle_id` |
 | `3.1.4` | September 12th, 2015 | Updates dependencies |
 | `3.1.3` | August 15th, 2015 | Adds quotes around code-signing identity |
 | `3.1.2` | July 21th, 2015 | Fixes minify path |

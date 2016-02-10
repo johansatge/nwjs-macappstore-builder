@@ -1,6 +1,6 @@
 {
   "name": "nwjs-macappstore-builder",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "Easily build and publish NW.js apps on the Mac App Store.",
   "keywords": [
     "cli-app",
