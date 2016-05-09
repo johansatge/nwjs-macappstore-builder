@@ -110,19 +110,20 @@ The `build-config.json` file being a JSON object containing all the parameters d
 
 | Version | Date | Notes |
 | --- | --- | --- |
-| `3.1.5` | February 10th, 2016 | Fixes validation issue when using uppercase letters in `bundle_id` |
-| `3.1.4` | September 12th, 2015 | Updates dependencies |
-| `3.1.3` | August 15th, 2015 | Adds quotes around code-signing identity |
-| `3.1.2` | July 21th, 2015 | Fixes minify path |
-| `3.1.1` | July 21th, 2015 | Fixes relative config path |
-| `3.1.0` | July 20th, 2015 | Adds `uglify_js` option (will uglify all JS found in the app) |
-| `3.0.2` | July 09th, 2015 | Do not `--force` signing as it makes the app crash on some cases |
-| `3.0.1` | July 09th, 2015 | Adds the `Fixing permissions` step |
-| `3.0.0` | July 09th, 2015 | Adds the `identity_installer` option<br>Adds `--force` when signing<br>Do not force bundle IDs when signing |
-| `2.1.2` | July 08th, 2015 | Updates repository URL |
-| `2.1.1` | July 08th, 2015 | NPM fix |
-| `2.1.0` | July 08th, 2015 | Adds packaging step |
-| `2.0.0` | July 08th, 2015 | Initial version |
+| `3.1.6` | 2016-05-09 | Displays a warning on minification error & updates dependencies |
+| `3.1.5` | 2016-02-10 | Fixes validation issue when using uppercase letters in `bundle_id` |
+| `3.1.4` | 2015-09-12 | Updates dependencies |
+| `3.1.3` | 2015-08-15 | Adds quotes around code-signing identity |
+| `3.1.2` | 2015-07-21 | Fixes minify path |
+| `3.1.1` | 2015-07-21 | Fixes relative config path |
+| `3.1.0` | 2015-07-20 | Adds `uglify_js` option (will uglify all JS found in the app) |
+| `3.0.2` | 2015-07-09 | Do not `--force` signing as it makes the app crash on some cases |
+| `3.0.1` | 2015-07-09 | Adds the `Fixing permissions` step |
+| `3.0.0` | 2015-07-09 | Adds the `identity_installer` option<br>Adds `--force` when signing<br>Do not force bundle IDs when signing |
+| `2.1.2` | 2015-07-08 | Updates repository URL |
+| `2.1.1` | 2015-07-08 | NPM fix |
+| `2.1.0` | 2015-07-08 | Adds packaging step |
+| `2.0.0` | 2015-07-08 | Initial version |
 
 ## License
 
