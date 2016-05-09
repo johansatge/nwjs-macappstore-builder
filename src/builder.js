@@ -92,7 +92,14 @@ var m = function()
                 if (config.uglify_js)
                 {
                     log_output ? console.log('Uglifying Javascript...') : null;
-                    Files.uglifyJavascript(app_path, next);
+                    Files.uglifyJavascript(app_path, function(error, error_files)
+                    {
+                        error_files.map(function(error_file)
+                        {
+                            log_output ? console.log('Could not minify ' + error_file.path + ' (' + error_file.error + ')') : null;
+                        });
+                        next(error);
+                    });
                 }
                 else
                 {

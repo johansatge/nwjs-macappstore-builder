@@ -64,15 +64,23 @@ m.uglifyJavascript = function(app_path, callback)
     var cwd = app_path + '/Contents/Resources/app.nw/';
     glob('**/*.js', {cwd: cwd}, function(error, files)
     {
+        var error_files = [];
         for (var index = 0; index < files.length; index += 1)
         {
             if (files[index].search('.min.') === -1)
             {
-                var minified = uglifyjs.minify(cwd + files[index]);
-                fs.writeFileSync(cwd + files[index], minified.code, {encoding: 'utf8'});
+                try
+                {
+                    var minified = uglifyjs.minify(cwd + files[index]);
+                    fs.writeFileSync(cwd + files[index], minified.code, {encoding: 'utf8'});
+                }
+                catch(error)
+                {
+                    error_files.push({path: files[index], error: error.message});
+                }
             }
         }
-        callback(error);
+        callback(null, error_files);
     });
 };
 
