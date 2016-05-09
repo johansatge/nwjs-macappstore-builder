@@ -37,18 +37,17 @@
   },
   "repository": "johansatge/nwjs-macappstore-builder",
   "dependencies": {
-    "async": "^1.4.2",
+    "async": "^1.5.2",
     "colors": "^1.1.2",
-    "glob": "^5.0.14",
-    "plist": "^1.1.0",
+    "glob": "^7.0.3",
+    "plist": "^1.2.0",
     "replace": "^0.3.0",
-    "shelljs": "^0.5.3",
-    "uglify-js": "^2.4.24",
-    "validator.js": "^1.2.2",
-    "yargs": "^3.24.0"
+    "uglify-js": "^2.6.2",
+    "validator.js": "^1.2.3",
+    "yargs": "^4.7.0"
   },
   "devDependencies": {
-    "mocha": "^2.3.2"
+    "mocha": "^2.4.5"
   },
   "engines": {
     "node": ">=0.12.0"
